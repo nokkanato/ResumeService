@@ -1,10 +1,19 @@
 <template lang="html">
   <div class="phone-viewport">
-    <md-toolbar>
+    <md-toolbar style="background-color: black">
       <md-button class="md-default" @click.native="click('Index')">
         <h2>Resume Service</h2>
       </md-button>
       <div id='button'>
+        <md-menu md-align-trigger>
+          <md-button class="md-theme-default" md-menu-trigger>Menu for Members</md-button>
+
+          <md-menu-content>
+            <md-menu-item @click.native="click('Create')">Create Card</md-menu-item>
+            <md-menu-item>My Item 2</md-menu-item>
+            <md-menu-item>My Item 3</md-menu-item>
+          </md-menu-content>
+        </md-menu>
         <md-button class="md-default" @click.native="click('Login')">Login</md-button>
         <md-button class="md-theme-default" @click.native="click('Register')">Register</md-button>
         <md-button class="md-theme-default" @click.native="click('Group')">Category</md-button>
@@ -12,6 +21,8 @@
     </md-toolbar>
   </div>
 </template>
+
+
 
 <script>
 import router from '@/router'
@@ -37,7 +48,10 @@ export default {
 }*/
 
 #button {
-  margin-left: 50%;
+  margin-left: 30%;
 }
+/*#nav_bar {
+
+}*/
 
 </style>

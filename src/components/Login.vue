@@ -1,11 +1,11 @@
 <template lang="html">
   <div class='user' id='body'>
-    <md-card>
+    <md-card id='set_box'>
 
 
   <md-card-header>
     <div class="md-title">Login</div>
-    <div class="md-subhead">Subtitle here</div>
+    <div class="md-subhead">Resume</div>
   </md-card-header>
 
   <md-card-actions id='cardaction'>
@@ -13,7 +13,7 @@
     <md-button>Employer</md-button>
   </md-card-actions>
 
-<br><br><br><br><br><br>
+<br><br>
   <md-input-container id='container'>
    <label>Username</label>
    <md-input v-model='username' maxlength="20"></md-input>
@@ -54,9 +54,9 @@ export default {
 #body {
   padding-top: 100px;
 }
-.md-card {
+#set_box {
   width: 400px;
-  height: 500px;
+  height: 400px;
   margin-left: 400px;
 }
 
@@ -66,6 +66,6 @@ export default {
 
 #container {
   width: 50%;
-  margin-left: 30%;
+  margin-left: 26%;
 }
 </style>
