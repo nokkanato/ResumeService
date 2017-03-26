@@ -7,6 +7,7 @@ import Register from '@/components/Register'
 import Card from '@/components/Cards'
 import Preview from '@/components/preview'
 import Create from '@/components/create'
+import Employer from '@/components/employer'
 
 Vue.use(Router)
 
@@ -46,6 +47,11 @@ export default new Router({
       path: '/create',
       name: 'Create',
       component: Create
+    },
+    {
+      path: '/employer',
+      name: 'Employer',
+      component: Employer
     }
   ]
 })

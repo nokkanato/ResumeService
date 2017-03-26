@@ -10,7 +10,7 @@
 
           <md-menu-content>
             <md-menu-item @click.native="click('Create')">Create Card</md-menu-item>
-            <md-menu-item>My Item 2</md-menu-item>
+            <md-menu-item @click.native="click('Employer')">Employer</md-menu-item>
             <md-menu-item>My Item 3</md-menu-item>
           </md-menu-content>
         </md-menu>
