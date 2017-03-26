@@ -5,13 +5,8 @@
 
   <md-card-header>
     <div class="md-title">Login</div>
-    <div class="md-subhead">Resume</div>
+    <div class="md-subhead">EMPLOYEE</div>
   </md-card-header>
-
-  <md-card-actions id='cardaction'>
-    <md-button>Employee</md-button>
-    <md-button>Employer</md-button>
-  </md-card-actions>
 
 <br><br>
   <md-input-container id='container'>

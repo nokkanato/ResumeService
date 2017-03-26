@@ -1,8 +1,8 @@
 <template lang="html">
   <md-card id="new_card">
   <md-card-header>
-    <div class="md-title">Create a New Card</div>
-    <div class="md-subhead">Fulfill Your Card</div>
+    <div class="md-title">Create Resume</div>
+    <div class="md-subhead">Employee</div>
   </md-card-header>
   <form novalidate @submit.stop.prevent="submit">
   <md-input-container>
@@ -80,7 +80,7 @@
 
     <md-dialog-actions>
       <md-button class="md-accent" @click.native="closeDialog('dialog1')">Cancel</md-button>
-      <md-button class="md-warning" @click.native="closeDialog('dialog1')">Ok</md-button>
+      <md-button class="md-warning" @click.native="create_employee_profile">Ok</md-button>
     </md-dialog-actions>
   </md-dialog>
 
@@ -92,6 +92,7 @@
 
 
 <script>
+import cardApi from '../api/card.js'
 export default {
   methods: {
     openDialog (ref) {
@@ -105,6 +106,12 @@ export default {
     },
     onClose (type) {
       console.log('Closed', type)
+    },
+    create_employee_profile () {
+      console.log('heyyyyyy')
+      cardApi.create_employee_profile(this.username, this.specialities, this.age, this.education, this.experience, this.expected_salary, this.description, this.fb_name)
+      this.$refs['dialog1'].close()
+      // router.push({ name: 'Register' })
     }
   },
   data () {
