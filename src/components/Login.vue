@@ -44,7 +44,6 @@ export default {
   },
   methods: {
     login () {
-      console.log('heyyyyyy')
       UserApi.login(this.username, this.password)
       // router.push({ name: 'Register' })
     }
