@@ -1,7 +1,7 @@
 <template lang="html">
   <div class="container">
     <md-layout md-flex-xsmall="20" md-flex-small="10" md-flex-medium="5">
-      <md-card md-with-hover id="eachCard" v-for="acard in lst" >
+      <md-card md-with-hover id="eachCard" @click.native="click('Card')" v-for="acard in lst" >
         <md-card-header>
           <div class="md-title">
             <md-icon class="material-icons md-size-3x">{{ acard[0] }}</md-icon>
@@ -24,6 +24,7 @@
 </template>
 
 <script>
+import router from '@/router'
 export default {
   data () {
     return {
@@ -48,8 +49,14 @@ export default {
         ['directions', 'others']
       ]
     }
+  },
+  methods: {
+    click (redirect) {
+      router.push({ name: redirect })
+    }
   }
 }
+
 </script>
 <style lang="css">
 /*#box {
