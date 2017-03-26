@@ -10,26 +10,34 @@
 
           <md-menu-content>
             <md-menu-item @click.native="click('Create')">Create Card</md-menu-item>
-            <md-menu-item>My Item 2</md-menu-item>
-            <md-menu-item>My Item 3</md-menu-item>
+            <md-menu-item @click.native="click('Profile')">Manage Profile</md-menu-item>
+            <!-- <md-menu-item>My Item 3</md-menu-item> -->
           </md-menu-content>
         </md-menu>
-        <md-button class="md-default" @click.native="click('Login')">Login</md-button>
-        <md-button class="md-theme-default" @click.native="click('Register')">Register</md-button>
-        <md-button class="md-theme-default" @click.native="click('Group')">Category</md-button>
+        <!-- <md-button class="md-default" @click.native="click('Create')">Create Card</md-button> -->
+        <md-button class="md-default" @click.native="click('Group')">Category</md-button>
+        <md-button v-if='checkLoggedIn() == false' class="md-theme-default" @click.native="click('Register')">Register</md-button>
+        <md-button v-if='checkLoggedIn() == false' :disabled="someComputedProperty" class="md-theme-default" @click.native="click('Login')">Login</md-button>
       </div>
     </md-toolbar>
   </div>
 </template>
 
-
-
 <script>
 import router from '@/router'
+import store from '@/store'
 export default {
   methods: {
     click (redirect) {
       router.push({ name: redirect })
+    },
+    checkLoggedIn () {
+      console.log(store.state.id)
+      if (store.state.id !== null) {
+        return true
+      } else {
+        return false
+      }
     }
   }
 }

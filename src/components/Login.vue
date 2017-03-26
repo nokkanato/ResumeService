@@ -5,13 +5,8 @@
 
   <md-card-header>
     <div class="md-title">Login</div>
-    <div class="md-subhead">Resume</div>
+    <div class="md-subhead">EMPLOYEE</div>
   </md-card-header>
-
-  <md-card-actions id='cardaction'>
-    <md-button>Employee</md-button>
-    <md-button>Employer</md-button>
-  </md-card-actions>
 
 <br><br>
   <md-input-container id='container'>
@@ -35,6 +30,7 @@
 
 <script>
 import UserApi from '../api/users.js'
+import router from '@/router'
 export default {
   data () {
     return {
@@ -44,9 +40,8 @@ export default {
   },
   methods: {
     login () {
-      console.log('heyyyyyy')
       UserApi.login(this.username, this.password)
-      // router.push({ name: 'Register' })
+      router.push({ name: 'Group' })
     }
   }
 }

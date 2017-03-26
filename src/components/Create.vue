@@ -1,8 +1,8 @@
 <template lang="html">
   <md-card id="new_card">
   <md-card-header>
-    <div class="md-title">Create a New Card</div>
-    <div class="md-subhead">Fulfill Your Card</div>
+    <div class="md-title">Create Resume</div>
+    <div class="md-subhead">Employee</div>
   </md-card-header>
   <form novalidate @submit.stop.prevent="submit">
   <md-input-container>
@@ -75,12 +75,12 @@
       <h4>specialities: {{ specialities }}</h4>
       <h4>Expexted Salary: {{ salary }}</h4>
       <h4>Facebook Name: {{ fbname }}</h4>
-      <h4>{{ info }}</h4>
+      <h4>Discription: {{ info }}</h4>
     </md-dialog-content>
 
     <md-dialog-actions>
       <md-button class="md-accent" @click.native="closeDialog('dialog1')">Cancel</md-button>
-      <md-button class="md-warning" @click.native="closeDialog('dialog1')">Ok</md-button>
+      <md-button class="md-warning" @click.native="create_employee_profile">Ok</md-button>
     </md-dialog-actions>
   </md-dialog>
 
@@ -92,6 +92,8 @@
 
 
 <script>
+import cardApi from '../api/card.js'
+import router from '@/router'
 export default {
   methods: {
     openDialog (ref) {
@@ -105,6 +107,19 @@ export default {
     },
     onClose (type) {
       console.log('Closed', type)
+    },
+    create_employee_profile () {
+      console.log(this.specialities)
+      console.log(this.username)
+      console.log(this.age)
+      console.log(this.expected_salary)
+      console.log(this.description)
+      console.log(this.education)
+      console.log(this.fb_name)
+
+      cardApi.create_card(this.firstname, this.lastname, this.salary, this.age, this.education, this.experience, this.specialities, this.fbname, this.info)
+      this.$refs['dialog1'].close()
+      router.push({ name: 'Group' })
     }
   },
   data () {

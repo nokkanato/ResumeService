@@ -1,11 +1,10 @@
 // import Promise from 'promise'
 
 import Vue from 'vue'
-// import store from '@/store.js'
+import store from '@/store'
 
 export default {
   login (email, password, callback) {
-    // console.log(store)
     var loginParams = {
       user: {
         email: email,
@@ -15,6 +14,8 @@ export default {
     Vue.$http.post('/api/v1/users/login', loginParams)
     .then(function (response) {
       // store.dispatch('login')
+      store.state.id = response.data
+      // store..id = response.data
       callback(response.data)
     })
     .catch(function (response) {
