@@ -15,7 +15,7 @@
 
 <br><br>
   <md-input-container id='container'>
-   <label>Username</label>
+   <label>Email</label>
    <md-input v-model='username' maxlength="20"></md-input>
  </md-input-container>
 
@@ -25,7 +25,7 @@
     <label>Password</label>
     <md-input v-model='password' type="password"></md-input>
   </md-input-container>
-  <md-button class="md-theme-default" @click.native="eiei">Login</md-button>
+  <md-button class="md-theme-default" @click.native="login">Login</md-button>
 
 
 </md-card>
@@ -34,6 +34,7 @@
 </template>
 
 <script>
+import UserApi from '../api/users.js'
 export default {
   data () {
     return {
@@ -42,8 +43,9 @@ export default {
     }
   },
   methods: {
-    eiei () {
+    login () {
       console.log('heyyyyyy')
+      UserApi.login(this.username, this.password)
       // router.push({ name: 'Register' })
     }
   }

@@ -1,6 +1,8 @@
 <template lang="html">
+
   <div class='user' id='body'>
     <md-card id='set_box'>
+
 
 
   <md-card-header>
@@ -35,7 +37,20 @@
 
 
 <script>
+import RegisterApi from '@/api/register.js'
 export default {
+  data () {
+    return {
+      username: '',
+      password: '',
+      comfirmPassword: ''
+    }
+  },
+  methods: {
+    register () {
+      RegisterApi.login(this.username, this.password, this.comfirmPassword)
+    }
+  }
 }
 </script>
 

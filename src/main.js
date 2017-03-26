@@ -12,6 +12,10 @@ Vue.use(VueMaterial)
 
 Vue.config.productionTip = false
 
+Axios.defaults.baseURL = 'http://localhost:3000'
+Axios.defaults.headers.common.Accept = 'application/json'
+Axios.defaults.withCredentials = true
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
