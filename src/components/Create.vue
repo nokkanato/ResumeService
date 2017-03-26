@@ -75,7 +75,7 @@
       <h4>specialities: {{ specialities }}</h4>
       <h4>Expexted Salary: {{ salary }}</h4>
       <h4>Facebook Name: {{ fbname }}</h4>
-      <h4>{{ info }}</h4>
+      <h4>Discription: {{ info }}</h4>
     </md-dialog-content>
 
     <md-dialog-actions>
@@ -93,6 +93,7 @@
 
 <script>
 import cardApi from '../api/card.js'
+import router from '@/router'
 export default {
   methods: {
     openDialog (ref) {
@@ -108,10 +109,17 @@ export default {
       console.log('Closed', type)
     },
     create_employee_profile () {
-      console.log('heyyyyyy')
-      cardApi.create_employee_profile(this.username, this.specialities, this.age, this.education, this.experience, this.expected_salary, this.description, this.fb_name)
+      console.log(this.specialities)
+      console.log(this.username)
+      console.log(this.age)
+      console.log(this.expected_salary)
+      console.log(this.description)
+      console.log(this.education)
+      console.log(this.fb_name)
+
+      cardApi.create_card(this.firstname, this.lastname, this.salary, this.age, this.education, this.experience, this.specialities, this.fbname, this.info)
       this.$refs['dialog1'].close()
-      // router.push({ name: 'Register' })
+      router.push({ name: 'Group' })
     }
   },
   data () {

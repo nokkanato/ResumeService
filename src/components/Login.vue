@@ -30,6 +30,7 @@
 
 <script>
 import UserApi from '../api/users.js'
+import router from '@/router'
 export default {
   data () {
     return {
@@ -40,7 +41,7 @@ export default {
   methods: {
     login () {
       UserApi.login(this.username, this.password)
-      // router.push({ name: 'Register' })
+      router.push({ name: 'Group' })
     }
   }
 }

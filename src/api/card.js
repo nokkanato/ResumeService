@@ -2,24 +2,22 @@
 
 import Vue from 'vue'
 // import store from '@/store.js'
-
 export default {
   create_card (firstname, lastname, salary, age, education, experience, specialities, fbName, description, callback) {
     // console.log(store)
     var loginParams = {
-      employee: {
-        firstname: firstname,
-        lastname: lastname,
-        salary: salary,
-        age: age,
-        education: education,
-        experience: experience,
-        specialities: specialities,
-        fb_name: fbName,
-        description: description
-      }
+      first_name: firstname,
+      last_name: lastname,
+      specialties: specialities,
+      age: age,
+      education: education,
+      experience: experience,
+      expected_salary: salary,
+      description: fbName,
+      fb_name: description
+
     }
-    Vue.$http.post('/card/', loginParams)
+    Vue.$http.post('/card', loginParams)
     .then(function (response) {
       // store.dispatch('login')
       callback(response.data)
