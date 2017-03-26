@@ -20,14 +20,14 @@
     </md-input-container>
   </form>
 
-  <div id="tagtag" style="width: 700px;height: 50px;margin-left: 300px;">
+  <!-- <div id="tagtag" style="width: 700px;height: 50px;margin-left: 300px;">
     <md-chips v-model="cities" :md-max="5" md-input-placeholder="Category...">
       <template scope="chip">
         <span >{{ chip.value }}</span>
         <small v-if="chip.value === 'radio'"></small>
       </template>
     </md-chips>
-  </div>
+  </div> -->
 </div>
 
 </template>

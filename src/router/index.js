@@ -7,7 +7,7 @@ import Register from '@/components/Register'
 import Card from '@/components/Cards'
 import Preview from '@/components/preview'
 import Create from '@/components/create'
-import Employer from '@/components/employer'
+import Profile from '@/components/profile'
 
 Vue.use(Router)
 
@@ -49,9 +49,9 @@ export default new Router({
       component: Create
     },
     {
-      path: '/employer',
-      name: 'Employer',
-      component: Employer
+      path: '/profile',
+      name: 'Profile',
+      component: Profile
     }
   ]
 })

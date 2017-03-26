@@ -10,19 +10,18 @@
 
           <md-menu-content>
             <md-menu-item @click.native="click('Create')">Create Card</md-menu-item>
-            <md-menu-item @click.native="click('Employer')">Employer</md-menu-item>
-            <md-menu-item>My Item 3</md-menu-item>
+            <md-menu-item @click.native="click('Profile')">Manage Profile</md-menu-item>
+            <!-- <md-menu-item>My Item 3</md-menu-item> -->
           </md-menu-content>
         </md-menu>
-        <md-button class="md-default" @click.native="click('Login')">Login</md-button>
+        <!-- <md-button class="md-default" @click.native="click('Create')">Create Card</md-button> -->
+        <md-button class="md-default" @click.native="click('Group')">Category</md-button>
         <md-button class="md-theme-default" @click.native="click('Register')">Register</md-button>
-        <md-button class="md-theme-default" @click.native="click('Group')">Category</md-button>
+        <md-button :disabled="someComputedProperty" class="md-theme-default" @click.native="click('Login')">Login</md-button>
       </div>
     </md-toolbar>
   </div>
 </template>
-
-
 
 <script>
 import router from '@/router'

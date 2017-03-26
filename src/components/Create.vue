@@ -92,7 +92,7 @@
 
 
 <script>
-import employeeApi from '../api/employee.js'
+import cardApi from '../api/card.js'
 export default {
   methods: {
     openDialog (ref) {
@@ -109,7 +109,7 @@ export default {
     },
     create_employee_profile () {
       console.log('heyyyyyy')
-      employeeApi.create_employee_profile(this.username, this.specialities, this.age, this.education, this.experience, this.expected_salary, this.description, this.fb_name)
+      cardApi.create_employee_profile(this.username, this.specialities, this.age, this.education, this.experience, this.expected_salary, this.description, this.fb_name)
       this.$refs['dialog1'].close()
       // router.push({ name: 'Register' })
     }

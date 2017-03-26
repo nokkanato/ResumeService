@@ -4,18 +4,15 @@ import Vue from 'vue'
 // import store from '@/store.js'
 
 export default {
-  create_employee_profile (username, specialities, age, education, experience, expectedSalary, description, fbName, callback) {
+  employee_profile (name, address, email, facebook, phoneNumber, callback) {
     // console.log(store)
     var loginParams = {
       employee: {
-        username: username,
-        specialities: specialities,
-        age: age,
-        education: education,
-        experience: experience,
-        expectedSalary: expectedSalary,
-        description: description,
-        fbName: fbName
+        name: name,
+        address: address,
+        email: email,
+        facebook: facebook,
+        phone_no: phoneNumber
       }
     }
     Vue.$http.post('/employee_profile', loginParams)
