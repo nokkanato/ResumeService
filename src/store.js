@@ -9,8 +9,9 @@ const state = {
   auth: false,
   username: null,
   password: null,
-  id: null
-
+  id: null,
+  page: null,
+  preview_id: null
 }
 
 // mutations are operations that actually mutates the state.

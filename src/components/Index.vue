@@ -2,9 +2,24 @@
   <md-layout :md-gutter="24" id="margin_layout" >
 
 <md-layout id="margin_layout" v-for="x in posts">
-<md-card id="fourCards" @click.native="click('Preview')" >
-
-  Course : {{x.last_name}}
+<md-card id="Cards"  >
+  <md-card-content>
+    <center><img border="2" height="70" width="70" src="../assets/user.jpg"></center>
+    <br>
+    First Name : {{x.first_name}}
+    <br>
+    Last Name : {{x.last_name}}
+    <br>
+    Education : {{x.education}}
+    <br>
+    Experience : {{x.experience}}
+    <br>
+    Specialities : {{x.specialties}}
+    <br>
+    Expected Salary : {{x.expected_salary}}
+    <br>
+    Facebook Name : {{x.fb_name}}
+  </md-card-content>
 
 </md-card>
 </md-layout>
@@ -37,29 +52,11 @@ export default {
 </script>
 
 <style lang="css">
-#body {
-  padding-top: 400px;
-},
-#container {
-  margin-left: 40%;
-  width: 20%;
-  opacity: 0.5;
-},
-#tagtag{
-  margin-left: 400px;
-
-}
-#body {
-padding-top: 400px;
-},
-#container {
-margin-left: 40%;
-width: 20%;
-opacity: 0.5;
-},
-#tagtag{
-margin-left: 400px;
-
-
+#Cards {
+  width: 240px;
+  height: 300px;
+  padding-top: 8px;
+  padding-left: 10px;
+  text-align: left;
 }
 </style>

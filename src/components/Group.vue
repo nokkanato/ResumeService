@@ -1,7 +1,7 @@
 <template lang="html">
   <div class="container">
     <md-layout md-flex-xsmall="20" md-flex-small="10" md-flex-medium="5">
-      <md-card md-with-hover id="eachCard" @click.native="click('Card')" v-for="acard in lst" >
+      <md-card md-with-hover id="eachCard" @click.native="click('Card',acard[1])" v-for="acard in lst" >
         <md-card-header>
           <div class="md-title">
             <md-icon class="material-icons md-size-3x">{{ acard[0] }}</md-icon>
@@ -25,12 +25,13 @@
 
 <script>
 import router from '@/router'
+import Store from '@/store.js'
 export default {
   data () {
     return {
       lst: [
         ['radio', 'media'],
-        ['videogame_asset', 'gammer'],
+        ['videogame_asset', 'gamer'],
         ['audiotrack', 'musician'],
         ['photo_camera', 'photographer'],
         ['local_taxi', 'driver'],
@@ -51,7 +52,8 @@ export default {
     }
   },
   methods: {
-    click (redirect) {
+    click (redirect, page) {
+      Store.state.page = page
       router.push({ name: redirect })
     }
   }

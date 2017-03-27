@@ -10,7 +10,7 @@
     </md-card-header>
 
     <md-card-header>
-      <div class="md-title">Create Resume</div>
+      <div class="md-title">Manage Profile</div>
       <div class="md-subhead">Employee</div>
     </md-card-header>
     <!-- <form novalidate @submit.stop.prevent="submit"> -->
@@ -43,7 +43,7 @@
       <label>Phone Number</label>
       <md-input v-model='phone_no' type="text"></md-input>
     </md-input-container>
-
+    <br>
     <md-button class="md-primary md-raised" id="tuum" @click.native="profile">Summit</md-button>
 
     <!-- <md-card-content>
@@ -77,7 +77,7 @@ export default {
 <style>
 #preview_card {
   margin: 50px;
-  height: 600px;
+  height: 650px;
   width: 900px;
   margin-left: 195px;
   padding-left: 50px;

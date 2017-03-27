@@ -33,6 +33,7 @@
 
 <script>
 import RegisterApi from '@/api/register.js'
+import router from '@/router'
 export default {
   data () {
     return {
@@ -44,6 +45,7 @@ export default {
   methods: {
     register () {
       RegisterApi.login(this.username, this.password, this.comfirmPassword)
+      router.push({ name: 'Login' })
     }
   }
 }

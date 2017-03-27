@@ -60,5 +60,16 @@ export default {
     .catch(function (response) {
       // store.dispatch('logout')
     })
+  },
+  get_card_specific (id, callback) {
+    Vue.$http.get('/card/' + id)
+    .then(function (response) {
+      // store.dispatch('login')
+      callback(response.data)
+    })
+    .catch(function (response) {
+      // store.dispatch('logout')
+    })
   }
+
 }
